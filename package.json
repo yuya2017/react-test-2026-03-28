@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "test": "vitest --passWithNoTests",
+    "test": "vitest",
     "test:run": "vitest run --passWithNoTests"
   },
   "dependencies": {

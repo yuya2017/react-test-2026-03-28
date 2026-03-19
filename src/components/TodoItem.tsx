@@ -14,7 +14,6 @@ export function TodoItem({ todo, onToggleTodo, onRemoveTodo }: TodoItemProps) {
           type="checkbox"
           checked={todo.completed}
           onChange={() => onToggleTodo(todo.id)}
-          aria-label={todo.title}
         />
         <span className={todo.completed ? "is-completed" : ""}>{todo.title}</span>
       </label>

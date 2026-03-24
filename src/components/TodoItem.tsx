@@ -15,7 +15,9 @@ export function TodoItem({ todo, onToggleTodo, onRemoveTodo }: TodoItemProps) {
           checked={todo.completed}
           onChange={() => onToggleTodo(todo.id)}
         />
-        <span className={todo.completed ? "is-completed" : ""}>{todo.title}</span>
+        <span className={todo.completed ? "is-completed" : ""}>
+          {todo.title}
+        </span>
       </label>
       <button type="button" onClick={() => onRemoveTodo(todo.id)}>
         Delete {todo.title}

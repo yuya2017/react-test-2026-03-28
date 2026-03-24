@@ -16,7 +16,7 @@ describe("useTodos", () => {
     expect(result.current.todos).toHaveLength(1);
     expect(result.current.todos[0]).toMatchObject({
       title: "Buy milk",
-      completed: false
+      completed: false,
     });
   });
 
@@ -55,13 +55,13 @@ describe("useTodos", () => {
   it("保存済み TODO を復元する", () => {
     window.localStorage.setItem(
       "todo-app-items",
-      JSON.stringify([{ id: "seed-1", title: "Read book", completed: true }])
+      JSON.stringify([{ id: "seed-1", title: "Read book", completed: true }]),
     );
 
     const { result } = renderHook(() => useTodos());
 
     expect(result.current.todos).toEqual([
-      { id: "seed-1", title: "Read book", completed: true }
+      { id: "seed-1", title: "Read book", completed: true },
     ]);
   });
 
@@ -70,14 +70,14 @@ describe("useTodos", () => {
       TODO_STORAGE_KEY,
       JSON.stringify([
         { id: "seed-1", title: "Read book", completed: true },
-        { id: 123, title: null, completed: "yes" }
-      ])
+        { id: 123, title: null, completed: "yes" },
+      ]),
     );
 
     const { result } = renderHook(() => useTodos());
 
     expect(result.current.todos).toEqual([
-      { id: "seed-1", title: "Read book", completed: true }
+      { id: "seed-1", title: "Read book", completed: true },
     ]);
   });
 
@@ -104,9 +104,9 @@ describe("useTodos", () => {
         {
           id: firstTodo.id,
           title: "Buy milk",
-          completed: false
-        }
-      ])
+          completed: false,
+        },
+      ]),
     );
 
     act(() => {
@@ -118,9 +118,9 @@ describe("useTodos", () => {
         {
           id: firstTodo.id,
           title: "Buy milk",
-          completed: true
-        }
-      ])
+          completed: true,
+        },
+      ]),
     );
 
     act(() => {

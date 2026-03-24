@@ -7,11 +7,7 @@ type TodoListProps = {
   onRemoveTodo: (id: string) => void;
 };
 
-export function TodoList({
-  todos,
-  onToggleTodo,
-  onRemoveTodo,
-}: TodoListProps) {
+export function TodoList({ todos, onToggleTodo, onRemoveTodo }: TodoListProps) {
   if (todos.length === 0) {
     return <p className="empty-state">No tasks yet. Add your first one.</p>;
   }

@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react";
-import { useSearch } from "./useSearch";
 import type { Todo } from "../types/todo";
+import { useSearch } from "./useSearch";
 
 const TODOS: Todo[] = [
   { id: "1", title: "Buy milk", completed: false },

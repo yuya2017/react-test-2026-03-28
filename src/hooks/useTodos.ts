@@ -62,16 +62,16 @@ export function useTodos() {
       {
         id: crypto.randomUUID(),
         title: trimmedTitle,
-        completed: false
-      }
+        completed: false,
+      },
     ]);
   };
 
   const toggleTodo = (id: string) => {
     setTodos((currentTodos) =>
       currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
     );
   };
 

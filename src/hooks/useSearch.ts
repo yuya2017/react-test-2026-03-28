@@ -14,7 +14,7 @@ export function useSearch(todos: Todo[]): UseSearchResult {
     query.trim() === ""
       ? todos
       : todos.filter((todo) =>
-          todo.title.toLowerCase().includes(query.toLowerCase())
+          todo.title.toLowerCase().includes(query.toLowerCase()),
         );
 
   return { query, setQuery, filteredTodos };

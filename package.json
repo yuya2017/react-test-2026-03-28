@@ -3,25 +3,63 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "vp dev",
+    "dev:legacy": "vite",
+    "build": "tsc --noEmit && vp build",
+    "build:legacy": "tsc --noEmit && vite build",
     "test": "vitest",
-    "test:run": "vitest run --passWithNoTests"
+    "test:run": "vitest run --passWithNoTests",
+    "lint:legacy": "eslint src",
+    "format:legacy": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:legacy:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "lint:raw": "oxlint --config .oxlintrc.json src",
+    "format:raw": "biome format --write src",
+    "check:raw": "oxlint --config .oxlintrc.json src && biome check src",
+    "lint:fast": "NODE_OPTIONS='--import tsx' vp lint src",
+    "format:fast": "NODE_OPTIONS='--import tsx' vp fmt src",
+    "check:fast": "NODE_OPTIONS='--import tsx' vp check --fix src",
+    "benchmark:legacy": "node scripts/benchmark.mjs legacy",
+    "benchmark:raw": "node scripts/benchmark.mjs raw",
+    "benchmark:fast": "node scripts/benchmark.mjs fast",
+    "benchmark:all": "node scripts/benchmark.mjs all",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.8",
+    "@eslint/js": "^9.39.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
     "jsdom": "^28.1.0",
+    "lint-staged": "^16.4.0",
+    "oxlint": "^1.56.0",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "vite": "^8.0.0",
+    "typescript-eslint": "^8.57.2",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.13",
+    "vite-plus": "^0.1.13",
     "vitest": "^4.1.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }

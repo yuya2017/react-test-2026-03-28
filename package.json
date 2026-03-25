@@ -31,6 +31,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.8",
     "@eslint/js": "^9.39.4",
+    "@react-grab/mcp": "^0.1.29",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -46,6 +47,7 @@
     "lint-staged": "^16.4.0",
     "oxlint": "^1.56.0",
     "prettier": "^3.8.1",
+    "react-grab": "^0.1.29",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.2",

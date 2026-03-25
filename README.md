@@ -10,3 +10,14 @@ Vite+ の比較メモやベンチマーク結果は [docs/vite-plus-experiment/V
 - `npm run dev`
 - `npm run build`
 - `npm run test`
+
+
+npx -y grab@latest init
+
+### AI Agent用ドキュメント生成（初回のみ）
+
+Next.jsのコードベース情報をAI Agentに提供するため、以下のコマンドを実行してください：
+
+```bash
+npx @next/codemod@canary agents-md
+```

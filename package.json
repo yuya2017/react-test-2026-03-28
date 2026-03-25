@@ -53,6 +53,9 @@
     "vite-plus": "^0.1.13",
     "vitest": "^4.1.0"
   },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.13"
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
